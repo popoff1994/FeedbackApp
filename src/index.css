@@ -22,7 +22,9 @@ ul {
   margin: auto;
   padding: 0 20px;
 }
-
+.positionFixed {
+  position: fixed;
+}
 header {
   height: 70px;
   width: 100%;
@@ -30,6 +32,15 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+.login {
+  justify-self: auto;
 }
 
 .card {

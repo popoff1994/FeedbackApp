@@ -1,5 +1,6 @@
-import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { auth } from '../config/firebase-config'
+
 
 
 function Header({ text, bgColor, textColor }) {
@@ -7,14 +8,16 @@ function Header({ text, bgColor, textColor }) {
         backgroundColor: bgColor, 
         color: textColor
     }
+
   return (
     <header style={headerStyles}>
       <div className="container">
-      <Link to='/'><h2>
+      <div to='/'><h2>
           {text}
           </h2>
-          </Link>
+          </div>
       </div>
+      <span className='positionFixed'>{auth.currentUser === null ? 'signed out' : `signed in as ${auth.currentUser.email}`}</span>
     </header>
   )
 }

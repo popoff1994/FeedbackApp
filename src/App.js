@@ -6,12 +6,13 @@ import FeedbackForm from "./components/FeedbackForm";
 import AboutIconLink from './components/AboutIconLink';
 import AboutPage from './pages/AboutPage';
 import { FeedbackProvider } from './context/FeedbackContext';
-
+import { Auth } from './components/auth'
 function App (){
     return (
         <FeedbackProvider>
         <Router>
         <Header/>
+        <Auth></Auth>
         <div className="container">
             <Routes>
         <Route exact path='/' element={

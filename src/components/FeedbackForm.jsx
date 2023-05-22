@@ -3,6 +3,7 @@ import Card from "./Shared/Card"
 import Button from "./Shared/Button"
 import RatingSelect from "./RatingSelect"
 import FeedbackContext from "../context/FeedbackContext"
+import { auth } from "../config/firebase-config"
 
 function FeedbackForm() {
     const [text, setText] = useState('')
@@ -39,7 +40,8 @@ function FeedbackForm() {
       if(text.trim().length > 10) {
         const newFeedback = {
           text,
-          rating
+          rating,
+          userID: auth?.currentUser?.uid
         }
         if(feedbackEdit.edit === true){
           updateFeedback(feedbackEdit.item.id, newFeedback)
